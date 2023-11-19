@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-votos';
+  
+  addLink(title:HTMLInputElement, link:HTMLInputElement){
+    console.log('valores: ', title.value, link.value);
+    return false
+  }
 }
