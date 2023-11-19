@@ -8,5 +8,13 @@ class Link {
         this.link = link;
         this.votes = votes || 0;
     }
+
+    voteUp() {
+        this.votes++;
+    }
+
+    voteDown() {
+        this.votes--;
+    }
 }
 
