@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Link } from './link/link.model';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  links : Link[];
+
+  constructor() {
+    this.links = [
+      new Link('Angular', 'http://angular.io', 100),
+      new Link('Google', 'http://google.com', 30),
+      new Link('Youtube', 'http://youtube.com', 70),
+    ]
+    console.log(this.links);
+  }
   
   addLink(title:HTMLInputElement, link:HTMLInputElement){
-    console.log('valores: ', title.value, link.value);
-    return false
+    this.links.push(new Link(title.value, link.value, 0));
+    title.value = '';
+    link.value = '';
+    return false;
   }
 }
